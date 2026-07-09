@@ -1,45 +1,78 @@
 <!DOCTYPE html>
 <html lang="uk">
+
 <head>
+
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>🐾 Привіт від Бордо</title>
+
+    <title>Бордо 🐾</title>
 
     <link rel="stylesheet" href="style.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
+
 </head>
 
 <body>
 
-<div class="container">
+    <!-- Лапки та сердечка -->
+    <div id="effects"></div>
 
-    <img src="images/bordo.png" class="bordo" id="bordo">
+    <!-- Основна картка -->
+    <div class="card">
 
-    <h1>Привіт! 🐶</h1>
+        <h1>Привіт! 👋</h1>
 
-    <h2>Я Бордо!</h2>
+        <h2>Я Бордо 🐾</h2>
 
-    <p class="text">
-        Службовий собака<br>
-        кінологічного центру<br>
-        <b>ГУНП в Сумській області</b>
-    </p>
+        <p class="description">
+            Службовий собака<br>
+            Кінологічного центру<br>
+            ГУНП в Сумській області
+        </p>
 
-    <button onclick="showWish()">
-        🐾 Отримати побажання
-    </button>
+        <!-- Бордо -->
+        <div class="dog-box">
 
-    <div id="speech">
-        <div id="wish"></div>
-</div>
+            <img
+                src="images/bordo.png"
+                id="bordo"
+                alt="Бордо"
+                onclick="showWish()">
 
-</div>
+        </div>
 
-<script src="script.js"></script>
+        <p class="tap">
+            🐾 Торкнись мене
+        </p>
+
+        <!-- Хмаринка -->
+        <div id="speech">
+
+            <div id="wish">
+
+                Привіт! ❤️
+
+            </div>
+
+        </div>
+
+        <footer>
+
+            З любов'ю,<br>
+            твій друг Бордо 🐾
+
+        </footer>
+
+    </div>
+
+    <script src="script.js"></script>
+
 </body>
-<div id="paw-container"></div>
-<div class="card">
-<div class="container">
-</div>
-</div>
-<script src="script.js"></script>    
+
 </html>
