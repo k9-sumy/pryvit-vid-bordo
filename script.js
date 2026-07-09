@@ -26,7 +26,15 @@ function showWish(){
 
 let random=Math.floor(Math.random()*wishes.length);
 
-document.getElementById("wish").innerHTML=wishes[random];
+const box=document.getElementById("wish");
+
+box.classList.remove("fade");
+
+void box.offsetWidth;
+
+box.classList.add("fade");
+
+box.innerHTML=wishes[random];
 
 }
 function createPaw(){
