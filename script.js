@@ -1,107 +1,31 @@
-body{
+const wishes = [
 
-margin:0;
+"🐾 Я пишаюся тобою!",
 
-background:#f6f8ff;
+"💙 Нехай сьогодні буде чудовий день!",
 
-font-family:Arial, sans-serif;
+"🌈 Усміхнись! Світ стає кращим від твоєї усмішки.",
 
-display:flex;
+"⭐ Ти справжній молодець!",
 
-justify-content:center;
+"❤️ Я дарую тобі лапку щастя!",
 
-align-items:center;
+"🐶 Не забувай мріяти!",
 
-min-height:100vh;
+"☀️ Нехай поруч будуть добрі люди!",
 
-}
+"🦴 Будь сміливим!",
 
-.container{
+"💛 У тебе все вийде!",
 
-text-align:center;
+"🐾 До нових зустрічей!"
 
-padding:25px;
+];
 
-max-width:500px;
+function showWish(){
 
-}
+let random=Math.floor(Math.random()*wishes.length);
 
-.bordo{
-
-width:250px;
-
-transition:0.4s;
-
-}
-
-.bordo:hover{
-
-transform:scale(1.05);
-
-}
-
-h1{
-
-color:#0A4DA2;
-
-margin-bottom:5px;
-
-}
-
-h2{
-
-margin-top:0;
-
-color:#1d1d1d;
-
-}
-
-.text{
-
-font-size:20px;
-
-line-height:1.6;
-
-}
-
-button{
-
-margin-top:25px;
-
-background:#0A4DA2;
-
-color:white;
-
-padding:18px 35px;
-
-border:none;
-
-border-radius:18px;
-
-font-size:20px;
-
-cursor:pointer;
-
-transition:0.3s;
-
-}
-
-button:hover{
-
-transform:scale(1.05);
-
-}
-
-#wish{
-
-margin-top:35px;
-
-font-size:24px;
-
-font-weight:bold;
-
-color:#0A4DA2;
-
-min-height:80px;
+document.getElementById("wish").innerHTML=wishes[random];
 
 }
