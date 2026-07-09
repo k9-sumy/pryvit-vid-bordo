@@ -24,6 +24,36 @@ const wishes = [
 
 function showWish(){
 
+const speech=document.getElementById("speech");
+
+const wish=document.getElementById("wish");
+
+speech.style.display="block";
+
+const random=Math.floor(Math.random()*wishes.length);
+
+const text=wishes[random];
+
+wish.innerHTML="";
+
+let i=0;
+
+const typing=setInterval(()=>{
+
+wish.innerHTML+=text.charAt(i);
+
+i++;
+
+if(i>=text.length){
+
+clearInterval(typing);
+
+}
+
+},40);
+
+}{
+
 let random=Math.floor(Math.random()*wishes.length);
 
 const box=document.getElementById("wish");
