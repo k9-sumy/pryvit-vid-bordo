@@ -33,27 +33,10 @@ function showWish() {
     // Випадкове побажання
     const text = wishes[Math.floor(Math.random() * wishes.length)];
 
-    box.innerHTML = "";
+    box.innerHTML = text;
+    typing = false;
 
-    let i = 0;
 
-    const timer = setInterval(() => {
-
-        box.innerHTML += text.charAt(i);
-
-        i++;
-
-        if (i >= text.length) {
-
-            clearInterval(timer);
-
-            typing = false;
-
-        }
-
-    }, 30);
-
-}
 
 
 // ❤️ Сердечка
