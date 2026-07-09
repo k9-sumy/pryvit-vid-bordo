@@ -93,7 +93,7 @@ function createPaw() {
     paw.innerHTML = "🐾";
 
     // тільки всередині екрана
-    paw.style.left = Math.random() * 95 + "vw";
+   paw.style.left = Math.random() * (window.innerWidth - 40) + "px";
 
     paw.style.top = "-50px";
 
