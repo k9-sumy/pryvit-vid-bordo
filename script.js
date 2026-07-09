@@ -1,133 +1,112 @@
 const wishes = [
-
-"🌟 Лапка Сміливості<br><br>Нехай сьогодні тобі вистачить сміливості зробити те, чим ти будеш пишатися!",
-
-"❤️ Лапка Доброти<br><br>Подаруй комусь усмішку. Добро завжди повертається!",
-
-"🐾 Лапка Дружби<br><br>Нехай поруч будуть люди, які підтримують тебе.",
-
-"☀️ Лапка Гарного дня<br><br>Бажаю тобі багато радості та гарного настрою!",
-
-"⭐ Лапка Успіху<br><br>У тебе все обов'язково вийде!",
-
-"🌈 Лапка Радості<br><br>Нехай сьогодні буде багато щасливих моментів!",
-
-"💙 Лапка Впевненості<br><br>Ти набагато сильніший, ніж думаєш.",
-
-"🐶 Привіт від Бордо<br><br>Дякую, що завітав до мене! До нових зустрічей!"
-
+    "🌟 Лапка Сміливості<br><br>Нехай сьогодні тобі вистачить сміливості зробити те, чим ти будеш пишатися!",
+    "❤️ Лапка Доброти<br><br>Подаруй комусь усмішку. Добро завжди повертається!",
+    "🐾 Лапка Дружби<br><br>Нехай поруч будуть люди, які підтримують тебе.",
+    "☀️ Лапка Гарного дня<br><br>Бажаю тобі багато радості та гарного настрою!",
+    "⭐ Лапка Успіху<br><br>У тебе все обов'язково вийде!",
+    "🌈 Лапка Радості<br><br>Нехай сьогодні буде багато щасливих моментів!",
+    "💙 Лапка Впевненості<br><br>Ти набагато сильніший, ніж думаєш.",
+    "🐶 Бордо передає привіт!<br><br>Я дуже радий, що ми познайомилися ❤️"
 ];
 
 let typing = false;
 
-function showWish(){
+function showWish() {
 
-    if(typing) return;
+    if (typing) return;
 
     typing = true;
 
     const dog = document.getElementById("bordo");
     const box = document.getElementById("wish");
 
+    // Стрибок Бордо
     dog.classList.add("jump");
 
-    setTimeout(()=>{
+    setTimeout(() => {
         dog.classList.remove("jump");
-    },500);
+    }, 500);
 
+    // Сердечка
     createHearts();
 
-    const text = wishes[Math.floor(Math.random()*wishes.length)];
+    // Випадкове побажання
+    const text = wishes[Math.floor(Math.random() * wishes.length)];
 
-    box.innerHTML="";
+    box.innerHTML = "";
 
-    let i=0;
+    let i = 0;
 
-    const timer = setInterval(()=>{
+    const timer = setInterval(() => {
 
         box.innerHTML += text.charAt(i);
 
         i++;
 
-        if(i>=text.length){
+        if (i >= text.length) {
 
             clearInterval(timer);
 
-            typing=false;
+            typing = false;
 
         }
 
-    },35);
+    }, 30);
 
 }
 
-function createHearts(){
 
-    for(let i=0;i<10;i++){
+// ❤️ Сердечка
 
-        const heart=document.createElement("div");
+function createHearts() {
 
-        heart.className="heart";
+    for (let i = 0; i < 8; i++) {
 
-        heart.innerHTML="❤️";
+        const heart = document.createElement("div");
 
-        heart.style.left=(window.innerWidth/2-60+Math.random()*120)+"px";
+        heart.className = "heart";
 
-        heart.style.top=(window.innerHeight/2+Math.random()*80)+"px";
+        heart.innerHTML = "❤️";
+
+        heart.style.left = (45 + Math.random() * 10) + "vw";
+        heart.style.top = (45 + Math.random() * 10) + "vh";
 
         document.body.appendChild(heart);
 
-        setTimeout(()=>heart.remove(),2000);
+        setTimeout(() => {
+            heart.remove();
+        }, 2000);
 
     }
 
 }
-.paw{
-    position:fixed;
-    top:-60px;
-    font-size:30px;
-    pointer-events:none;
-    opacity:0.25;
-    z-index:1;
-    animation:fall linear forwards;
-}
 
-@keyframes fall{
 
-0%{
-    transform:translateY(-60px) rotate(0deg);
-    opacity:0;
-}
+// 🐾 Лапки
 
-10%{
-    opacity:0.25;
-}
+function createPaw() {
 
-100%{
-    transform:translateY(110vh) rotate(360deg);
-    opacity:0;
-}
+    const paw = document.createElement("div");
 
-}
-function createPaw(){
+    paw.className = "paw";
 
-    const paw=document.createElement("div");
+    paw.innerHTML = "🐾";
 
-    paw.className="paw";
+    // тільки всередині екрана
+    paw.style.left = Math.random() * 95 + "vw";
 
-    paw.innerHTML="🐾";
+    paw.style.top = "-50px";
 
-    paw.style.left=Math.random()*window.innerWidth+"px";
+    paw.style.fontSize = (18 + Math.random() * 20) + "px";
 
-    paw.style.fontSize=(18+Math.random()*22)+"px";
-
-    paw.style.animationDuration=(6+Math.random()*4)+"s";
+    paw.style.animationDuration = (5 + Math.random() * 4) + "s";
 
     document.body.appendChild(paw);
 
-    setTimeout(()=>{
+    paw.addEventListener("animationend", () => {
         paw.remove();
-    },10000);
+    });
 
 }
-setInterval(createPaw,1200);
+
+setInterval(createPaw, 700);
