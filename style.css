@@ -11,7 +11,8 @@ body{
     display:flex;
     justify-content:center;
     align-items:center;
-    overflow-x:hidden;
+    overflow:hidden;
+    position:relative;
     padding:20px;
 }
 
@@ -164,4 +165,34 @@ transform:translateY(0) scale(.6);
 100%{
 opacity:0;
 transform:translateY(-180px) scale(1.5);
+}
+}
+
+.paw{
+    position:fixed;
+    top:-60px;
+    left:0;
+    pointer-events:none;
+    user-select:none;
+    z-index:0;
+    opacity:.22;
+    animation:fall linear forwards;
+}
+
+@keyframes fall{
+
+0%{
+    transform:translate3d(0,-60px,0) rotate(0deg);
+    opacity:0;
+}
+
+10%{
+    opacity:.22;
+}
+
+100%{
+    transform:translate3d(0,110vh,0) rotate(360deg);
+    opacity:0;
+}
+
 }
