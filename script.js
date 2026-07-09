@@ -82,7 +82,33 @@ function createHearts(){
     }
 
 }
+.paw{
+    position:fixed;
+    top:-60px;
+    font-size:30px;
+    pointer-events:none;
+    opacity:0.25;
+    z-index:1;
+    animation:fall linear forwards;
+}
 
+@keyframes fall{
+
+0%{
+    transform:translateY(-60px) rotate(0deg);
+    opacity:0;
+}
+
+10%{
+    opacity:0.25;
+}
+
+100%{
+    transform:translateY(110vh) rotate(360deg);
+    opacity:0;
+}
+
+}
 function createPaw(){
 
     const paw=document.createElement("div");
@@ -91,12 +117,17 @@ function createPaw(){
 
     paw.innerHTML="🐾";
 
-    paw.style.left=Math.random()*100+"vw";
+    paw.style.left=Math.random()*window.innerWidth+"px";
 
-    paw.style.animationDuration=(4+Math.random()*4)+"s";
+    paw.style.fontSize=(18+Math.random()*22)+"px";
+
+    paw.style.animationDuration=(6+Math.random()*4)+"s";
 
     document.body.appendChild(paw);
 
-    setTimeout(()=>paw.remove(),8000);
+    setTimeout(()=>{
+        paw.remove();
+    },10000);
+
 }
 setInterval(createPaw,1200);
