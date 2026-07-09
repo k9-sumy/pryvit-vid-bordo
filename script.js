@@ -86,26 +86,23 @@ function createHearts() {
 
 function createPaw() {
 
-    const paw = document.createElement("div");
+    const effects = document.getElementById("effects");
+
+    const paw = document.createElement("span");
 
     paw.className = "paw";
 
-    paw.innerHTML = "🐾";
+    paw.textContent = "🐾";
 
-    // тільки всередині екрана
-   paw.style.left = Math.random() * (window.innerWidth - 40) + "px";
+    paw.style.left = Math.random() * 100 + "%";
 
-    paw.style.top = "-50px";
+    paw.style.fontSize = (18 + Math.random() * 16) + "px";
 
-    paw.style.fontSize = (18 + Math.random() * 20) + "px";
+    paw.style.animationDuration = (5 + Math.random() * 3) + "s";
 
-    paw.style.animationDuration = (5 + Math.random() * 4) + "s";
+    effects.appendChild(paw);
 
-    document.body.appendChild(paw);
-
-    paw.addEventListener("animationend", () => {
-        paw.remove();
-    });
+    paw.addEventListener("animationend", () => paw.remove());
 
 }
 
