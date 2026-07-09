@@ -31,24 +31,36 @@ function showWish() {
     const dog = document.getElementById("bordo");
     const box = document.getElementById("wish");
 
-    // Стрибок Бордо
     dog.classList.add("jump");
 
     setTimeout(() => {
         dog.classList.remove("jump");
     }, 500);
 
-    // Сердечка
     createHearts();
 
-    // Випадкове побажання
     const text = wishes[Math.floor(Math.random() * wishes.length)];
 
-    box.innerHTML = text;
-    typing = false;
+    box.textContent = "";
 
+    let i = 0;
 
+    const timer = setInterval(() => {
 
+        box.textContent += text[i];
+
+        i++;
+
+        if (i >= text.length) {
+
+            clearInterval(timer);
+            typing = false;
+
+        }
+
+    }, 30);
+
+}
 
 // ❤️ Сердечка
 
