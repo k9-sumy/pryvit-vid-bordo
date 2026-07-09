@@ -169,14 +169,17 @@ transform:translateY(-180px) scale(1.5);
 }
 
 .paw{
-    position:fixed;
-    top:-60px;
-    left:0;
-    pointer-events:none;
-    user-select:none;
-    z-index:0;
-    opacity:.22;
+
+    position:absolute;
+
+    top:-40px;
+
     animation:fall linear forwards;
+
+    opacity:.18;
+
+    user-select:none;
+
 }
 
 @keyframes fall{
@@ -195,4 +198,11 @@ transform:translateY(-180px) scale(1.5);
     opacity:0;
 }
 
+}
+#effects{
+    position:fixed;
+    inset:0;
+    overflow:hidden;
+    pointer-events:none;
+    z-index:1;
 }
