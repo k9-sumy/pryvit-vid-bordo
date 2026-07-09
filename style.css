@@ -11,8 +11,8 @@ body{
     display:flex;
     justify-content:center;
     align-items:flex-start;
-    padding:25px 15 px;
-    overflow:hidden;
+    overflow-x:hidden;
+    overflow-y:auto;
     position:relative;
     padding:20px;
 }
@@ -21,7 +21,7 @@ body{
     width:min(100%,420px);
     background:#ffffff;
     border-radius:30px;
-    padding:30px 25px;
+    padding:20px;
     text-align:center;
     box-shadow:0 20px 45px rgba(0,0,0,.12);
     position:relative;
@@ -30,19 +30,19 @@ body{
 
 h1{
     color:#0b5cab;
-    font-size:36px;
+    font-size:30px;
     margin-bottom:10px;
 }
 
 h2{
     color:#184b8a;
-    font-size:28px;
+    font-size:24px;
     margin-bottom:15px;
 }
 
 .description{
     color:#555;
-    font-size:18px;
+    font-size:16px;
     line-height:1.5;
     margin-bottom:25px;
 }
@@ -54,7 +54,7 @@ h2{
 }
 
 #bordo{
-    width:min(240px,75vw);
+    width:min(200px,75vw);
     max-width:100%;
     cursor:pointer;
     user-select:none;
@@ -70,7 +70,7 @@ h2{
     margin-top:12px;
     color:#0b5cab;
     font-weight:700;
-    font-size:22px;
+    font-size:18px;
 }
 
 #speech{
@@ -95,7 +95,7 @@ h2{
 }
 
 #wish{
-    font-size:20px;
+    font-size:18px;
     line-height:1.6;
     color:#2c2c2c;
     font-weight:700;
@@ -107,7 +107,7 @@ h2{
 footer{
     margin-top:25px;
     color:#777;
-    font-size:16px;
+    font-size:14px;
 }
 
 @keyframes breathe{
