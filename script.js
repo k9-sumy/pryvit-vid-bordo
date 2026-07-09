@@ -50,3 +50,4 @@ paw.remove();
 },6000);
 
 }
+setInterval(createPaw,1200);
