@@ -101,10 +101,7 @@ h2{
     font-weight:700;
 
     white-space:pre-line;
-    word-wrap:break-word;
     overflow-wrap:anywhere;
-
-    width:100%;
 }
 
 footer{
