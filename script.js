@@ -41,22 +41,27 @@ function showWish() {
 
     const text = wishes[Math.floor(Math.random() * wishes.length)];
 
+    // 👉 Ось головний фікс
+    const letters = [...text];
+
     let index = 0;
 
     box.textContent = "";
 
     const timer = setInterval(function () {
 
-        box.textContent += text.charAt(index);
+        box.textContent += letters[index];
 
         index++;
 
-        if (index >= text.length) {
+        if (index >= letters.length) {
             clearInterval(timer);
             typing = false;
         }
 
     }, 35);
+
+}
 
 }
 
