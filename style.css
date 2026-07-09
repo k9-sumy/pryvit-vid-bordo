@@ -95,10 +95,16 @@ h2{
 }
 
 #wish{
-    font-size:14px;
+    font-size:20px;
     line-height:1.6;
     color:#2c2c2c;
     font-weight:700;
+
+    white-space:pre-line;
+    word-wrap:break-word;
+    overflow-wrap:anywhere;
+
+    width:100%;
 }
 
 footer{
