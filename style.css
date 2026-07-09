@@ -223,3 +223,44 @@ transform:translateY(0);
 }
 
 }
+#speech{
+
+margin-top:30px;
+
+background:white;
+
+padding:20px;
+
+border-radius:25px;
+
+box-shadow:0 8px 20px rgba(0,0,0,.1);
+
+font-size:24px;
+
+min-height:90px;
+
+position:relative;
+
+display:none;
+
+}
+
+#speech::after{
+
+content:"";
+
+position:absolute;
+
+bottom:-15px;
+
+left:50%;
+
+transform:translateX(-50%);
+
+border-width:15px 15px 0;
+
+border-style:solid;
+
+border-color:white transparent transparent;
+
+}
