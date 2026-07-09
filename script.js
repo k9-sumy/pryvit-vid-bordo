@@ -41,6 +41,29 @@ function showWish() {
 
     const text = wishes[Math.floor(Math.random() * wishes.length)];
 
+    let index = 0;
+
+    box.textContent = "";
+
+    const timer = setInterval(function () {
+
+        box.textContent += text.charAt(index);
+
+        index++;
+
+        if (index >= text.length) {
+            clearInterval(timer);
+            typing = false;
+        }
+
+    }, 35);
+
+}
+
+    createHearts();
+
+    const text = wishes[Math.floor(Math.random() * wishes.length)];
+
     box.textContent = "";
 
     let i = 0;
