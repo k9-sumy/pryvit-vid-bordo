@@ -1,91 +1,104 @@
 const wishes = [
 
-"🐾 Я пишаюся тобою!",
+"🌟 Лапка Сміливості<br><br>Нехай сьогодні тобі вистачить сміливості зробити те, чим ти будеш пишатися!",
 
-"💙 Нехай сьогодні буде чудовий день!",
+"❤️ Лапка Доброти<br><br>Подаруй комусь усмішку. Добро завжди повертається!",
 
-"🌈 Усміхнись! Світ стає кращим від твоєї усмішки.",
+"🐾 Лапка Дружби<br><br>Нехай поруч будуть люди, які підтримують тебе.",
 
-"⭐ Ти справжній молодець!",
+"☀️ Лапка Гарного дня<br><br>Бажаю тобі багато радості та гарного настрою!",
 
-"❤️ Я дарую тобі лапку щастя!",
+"⭐ Лапка Успіху<br><br>У тебе все обов'язково вийде!",
 
-"🐶 Не забувай мріяти!",
+"🌈 Лапка Радості<br><br>Нехай сьогодні буде багато щасливих моментів!",
 
-"☀️ Нехай поруч будуть добрі люди!",
+"💙 Лапка Впевненості<br><br>Ти набагато сильніший, ніж думаєш.",
 
-"🦴 Будь сміливим!",
-
-"💛 У тебе все вийде!",
-
-"🐾 До нових зустрічей!"
+"🐶 Привіт від Бордо<br><br>Дякую, що завітав до мене! До нових зустрічей!"
 
 ];
 
+let typing = false;
+
 function showWish(){
 
-const speech=document.getElementById("speech");
+    if(typing) return;
 
-const wish=document.getElementById("wish");
+    typing = true;
 
-speech.style.display="block";
+    const dog = document.getElementById("bordo");
+    const box = document.getElementById("wish");
 
-const random=Math.floor(Math.random()*wishes.length);
+    dog.classList.add("jump");
 
-const text=wishes[random];
+    setTimeout(()=>{
+        dog.classList.remove("jump");
+    },500);
 
-wish.innerHTML="";
+    createHearts();
 
-let i=0;
+    const text = wishes[Math.floor(Math.random()*wishes.length)];
 
-const typing=setInterval(()=>{
+    box.innerHTML="";
 
-wish.innerHTML+=text.charAt(i);
+    let i=0;
 
-i++;
+    const timer = setInterval(()=>{
 
-if(i>=text.length){
+        box.innerHTML += text.charAt(i);
 
-clearInterval(typing);
+        i++;
+
+        if(i>=text.length){
+
+            clearInterval(timer);
+
+            typing=false;
+
+        }
+
+    },35);
+
+}
+
+function createHearts(){
+
+    for(let i=0;i<10;i++){
+
+        const heart=document.createElement("div");
+
+        heart.className="heart";
+
+        heart.innerHTML="❤️";
+
+        heart.style.left=(window.innerWidth/2-60+Math.random()*120)+"px";
+
+        heart.style.top=(window.innerHeight/2+Math.random()*80)+"px";
+
+        document.body.appendChild(heart);
+
+        setTimeout(()=>heart.remove(),2000);
+
+    }
 
 }
 
-},40);
-
-}{
-
-let random=Math.floor(Math.random()*wishes.length);
-
-const box=document.getElementById("wish");
-
-box.classList.remove("fade");
-
-void box.offsetWidth;
-
-box.classList.add("fade");
-
-box.innerHTML=wishes[random];
-
-}
 function createPaw(){
 
-const paw=document.createElement("div");
+    const paw=document.createElement("div");
 
-paw.innerHTML="🐾";
+    paw.className="paw";
 
-paw.className="paw";
+    paw.innerHTML="🐾";
 
-paw.style.left=Math.random()*100+"vw";
+    paw.style.left=Math.random()*100+"vw";
 
-paw.style.animationDuration=3+Math.random()*3+"s";
+    paw.style.animationDuration=(4+Math.random()*4)+"s";
 
-document.getElementById("paw-container").appendChild(paw);
+    document.body.appendChild(paw);
 
-setTimeout(()=>{
-
-paw.remove();
-
-},6000);
+    setTimeout(()=>paw.remove(),8000);
 
 }
+
 setInterval(createPaw,1200);
