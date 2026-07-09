@@ -105,3 +105,28 @@ color:#0A4DA2;
 min-height:80px;
 
 }
+@keyframes float {
+
+0%{
+transform:translateY(0px);
+}
+
+50%{
+transform:translateY(-8px);
+}
+
+100%{
+transform:translateY(0px);
+}
+
+}
+
+.bordo{
+
+width:250px;
+
+animation:float 3s ease-in-out infinite;
+
+transition:.3s;
+
+}
