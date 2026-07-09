@@ -98,7 +98,5 @@ function createPaw(){
     document.body.appendChild(paw);
 
     setTimeout(()=>paw.remove(),8000);
-
 }
-
 setInterval(createPaw,1200);
