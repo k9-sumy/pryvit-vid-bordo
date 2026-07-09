@@ -5,7 +5,9 @@ const wishes = [
 
 `❤️ Лапка Доброти
 
-Подаруй комусь усмішку. Добро завжди повертається!`,
+Подаруй комусь усмішку.
+
+Добро завжди повертається!`,
 
 `🐾 Лапка Дружби
 
@@ -41,14 +43,13 @@ function showWish() {
 
     const text = wishes[Math.floor(Math.random() * wishes.length)];
 
-    // 👉 Ось головний фікс
     const letters = [...text];
 
     let index = 0;
 
     box.textContent = "";
 
-    const timer = setInterval(function () {
+    const timer = setInterval(() => {
 
         box.textContent += letters[index];
 
@@ -63,33 +64,6 @@ function showWish() {
 
 }
 
-}
-
-    createHearts();
-
-    const text = wishes[Math.floor(Math.random() * wishes.length)];
-
-    box.textContent = "";
-
-    let i = 0;
-
-    const timer = setInterval(() => {
-
-        box.textContent += text[i];
-
-        i++;
-
-        if (i >= text.length) {
-
-            clearInterval(timer);
-            typing = false;
-
-        }
-
-    }, 30);
-
-}
-
 // ❤️ Сердечка
 
 function createHearts() {
@@ -100,21 +74,18 @@ function createHearts() {
 
         heart.className = "heart";
 
-        heart.innerHTML = "❤️";
+        heart.textContent = "❤️";
 
         heart.style.left = (45 + Math.random() * 10) + "vw";
         heart.style.top = (45 + Math.random() * 10) + "vh";
 
         document.body.appendChild(heart);
 
-        setTimeout(() => {
-            heart.remove();
-        }, 2000);
+        setTimeout(() => heart.remove(), 2000);
 
     }
 
 }
-
 
 // 🐾 Лапки
 
